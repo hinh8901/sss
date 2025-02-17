@@ -1,0 +1,259 @@
+[
+    {
+        "product": {
+            "id": 136440,
+            "name": "Vé Cáp Chùa_Người lớn",
+            "price": 200000,
+            "originalPrice": 200000,
+            "version": 7,
+            "weekend": null,
+            "ticketTime": "06:00",
+            "holiday": false,
+            "guide": null,
+            "guideB2b": null,
+            "originalPriceList": {},
+            "originalPriceListB2b": {},
+            "categories": [],
+            "isLongTerm": false,
+            "park": {
+                "id": 15767,
+                "name": "Sun World Bà Đen",
+                "address": "Sun World Bà Đen",
+                "phone": null,
+                "email": null,
+                "workstationId": "SBD",
+                "logo": {
+                    "original": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/B%C3%A0%20%C4%90en.jpg",
+                    "thumb640": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130335/image-thumb__130335__640/B%C3%A0%20%C4%90en.jpg",
+                    "thumb1000": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130335/image-thumb__130335__1000/B%C3%A0%20%C4%90en.jpg",
+                    "thumb1600": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130335/image-thumb__130335__1600/B%C3%A0%20%C4%90en.jpg",
+                    "thumb1920": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130335/image-thumb__130335__1920/B%C3%A0%20%C4%90en.jpg"
+                },
+                "left": "210",
+                "top": "455",
+                "mapLogo": {
+                    "original": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/SW_BADEN_CHUAN%401%201.svg",
+                    "thumb640": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/SW_BADEN_CHUAN%401%201.svg",
+                    "thumb1000": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/SW_BADEN_CHUAN%401%201.svg",
+                    "thumb1600": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/SW_BADEN_CHUAN%401%201.svg",
+                    "thumb1920": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/SW_BADEN_CHUAN%401%201.svg"
+                },
+                "position": "bottom",
+                "href": null,
+                "mapIcon": null,
+                "hotlineB2c": null,
+                "hotlineB2b": null,
+                "land": "sunparadiselandPhuQuoc",
+                "image": {
+                    "original": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/Ba%20Den%20Mountain.png",
+                    "thumb640": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130328/image-thumb__130328__640/Ba%20Den%20Mountain.png",
+                    "thumb1000": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130328/image-thumb__130328__1000/Ba%20Den%20Mountain.png",
+                    "thumb1600": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130328/image-thumb__130328__1600/Ba%20Den%20Mountain.png",
+                    "thumb1920": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130328/image-thumb__130328__1920/Ba%20Den%20Mountain.png"
+                }
+            },
+            "image": null,
+            "versionB2b": 10,
+            "restaurant": {
+                "id": 136563,
+                "name": "Cả ngày",
+                "label": "Cả ngày",
+                "image": null
+            },
+            "usedArea2Object": {
+                "label": "06:00",
+                "value": "06:00"
+            },
+            "usedArea2": "06:00",
+            "used_area": "06:00",
+            "days": {
+                "monday": true,
+                "tuesday": true,
+                "wednesday": true,
+                "thursday": true,
+                "friday": true,
+                "saturday": true,
+                "sunday": true
+            },
+            "notePdf": ""
+        },
+        "amount": "50",
+        "date": "2025-02-15",
+        "performance": null,
+        "price": 200000,
+        "originalPrice": 200000,
+        "show": {
+            "id": 136388,
+            "name": "VÉ CÁP CHÙA HANG_NGƯỜI LỚN",
+            "description": " - Vé cáp treo khứ hồi đi tham quan Chùa Hang \\nx000D- Áp dụng cho KHÁCH từ 1m40 trở lên \\nx000D- GIÁ VÉ THAY ĐỔI THEO GIỜ SỬ DỤNG DỊCH VỤ CÁP TREO: \\nx000D+ Qua cổng soát vé cáp treo: Cả ngày \\nx000D+ Qua cổng soát vé cáp treo: Sau 17h00 \\nx000D- Giờ vận hành Cáp treo: \\nx000D+ Thứ 2 đến Thứ 6: 6h00-20h00 \\nx000D+ Thứ 7, CN: 5h30-21h00 \\nx000D",
+            "content": "",
+            "priceRange": null,
+            "link": null,
+            "areaType": "3",
+            "ageType": "1",
+            "park": {
+                "id": 105914,
+                "name": "Sun World Phú Quốc",
+                "address": null,
+                "phone": null,
+                "email": null,
+                "workstationId": "NIC",
+                "logo": {
+                    "original": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/2024.08%20TICKET%20ONLINE%20548x205px_3.png",
+                    "thumb640": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130337/image-thumb__130337__640/2024.08%20TICKET%20ONLINE%20548x205px_3.png",
+                    "thumb1000": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130337/image-thumb__130337__1000/2024.08%20TICKET%20ONLINE%20548x205px_3.png",
+                    "thumb1600": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130337/image-thumb__130337__1600/2024.08%20TICKET%20ONLINE%20548x205px_3.png",
+                    "thumb1920": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/130337/image-thumb__130337__1920/2024.08%20TICKET%20ONLINE%20548x205px_3.png"
+                },
+                "left": null,
+                "top": null,
+                "mapLogo": null,
+                "position": null,
+                "href": null,
+                "mapIcon": null,
+                "hotlineB2c": null,
+                "hotlineB2b": null,
+                "land": "sunparadiselandPhuQuoc",
+                "image": {
+                    "original": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/2024.08%20TICKET%20ONLINE%20548x205px_1.png",
+                    "thumb640": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/117358/image-thumb__117358__640/2024.08%20TICKET%20ONLINE%20548x205px_1.png",
+                    "thumb1000": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/117358/image-thumb__117358__1000/2024.08%20TICKET%20ONLINE%20548x205px_1.png",
+                    "thumb1600": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/117358/image-thumb__117358__1600/2024.08%20TICKET%20ONLINE%20548x205px_1.png",
+                    "thumb1920": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/117358/image-thumb__117358__1920/2024.08%20TICKET%20ONLINE%20548x205px_1.png"
+                }
+            },
+            "displayPrice": "150000",
+            "salePrice": "150000",
+            "minPrice": "150000",
+            "salePercent": null,
+            "salePercentB2b": null,
+            "note": null,
+            "materialType": "9004",
+            "pdfTemplatePath": "/PDF/{channel}/{lang}/pdf_sbd_bilingual",
+            "pdfTemplatePathB2b": "/PDF/{channel}/{lang}/pdf_sbd_bilingual",
+            "pdfLanguage": null,
+            "usedArea1Label": "Thời gian",
+            "usedArea2Label": null,
+            "taxCode": "7",
+            "groupCode": "",
+            "isB2CTicketAddon": null,
+            "b2cTicketAddonNote1": null,
+            "b2cTicketAddonNote2": null,
+            "isB2BTicketAddon": null,
+            "b2bTicketAddonNote1": null,
+            "b2bTicketAddonNote2": null,
+            "dateFrom": {
+                "time": "00:00",
+                "date": "2024/11/14",
+                "dateOrigin": "2024-11-14",
+                "datetime": "2024/11/14 00:00",
+                "dateDMY": "14/11/2024",
+                "datetimeDMY": "00:00 14/11/2024",
+                "datetimeDMYHIS": "00:00:00 14/11/2024",
+                "datetimeYHIS": "14/11/2024 00:00:00"
+            },
+            "dateTo": {
+                "time": "23:59",
+                "date": "2025/12/31",
+                "dateOrigin": "2025-12-31",
+                "datetime": "2025/12/31 23:59",
+                "dateDMY": "31/12/2025",
+                "datetimeDMY": "23:59 31/12/2025",
+                "datetimeDMYHIS": "23:59:00 31/12/2025",
+                "datetimeYHIS": "31/12/2025 23:59:00"
+            },
+            "modificationDate": {
+                "time": "08:30",
+                "date": "2025/02/14",
+                "dateOrigin": "2025-02-14",
+                "datetime": "2025/02/14 08:30",
+                "dateDMY": "14/02/2025",
+                "datetimeDMY": "08:30 14/02/2025",
+                "datetimeDMYHIS": "08:30:15 14/02/2025",
+                "datetimeYHIS": "14/02/2025 08:30:15"
+            },
+            "image": null,
+            "logo": null,
+            "catalog": {
+                "id": 15154,
+                "name": "Vé cáp treo/Công viên",
+                "mapVGS": "S1",
+                "logo": {
+                    "original": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/img_right_1.jpg",
+                    "thumb640": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/78948/image-thumb__78948__640/img_right_1.jpg",
+                    "thumb1000": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/78948/image-thumb__78948__1000/img_right_1.jpg",
+                    "thumb1600": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/78948/image-thumb__78948__1600/img_right_1.jpg",
+                    "thumb1920": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/78948/image-thumb__78948__1920/img_right_1.jpg"
+                }
+            },
+            "zones": [],
+            "performances": [],
+            "restaurants": [
+                {
+                    "id": 136563,
+                    "name": "Cả ngày",
+                    "label": "Cả ngày",
+                    "image": null
+                },
+                {
+                    "id": 136564,
+                    "name": "Sau 17h00",
+                    "label": "Sau 17h00",
+                    "image": null
+                }
+            ],
+            "program_list": [],
+            "tagInfoResponse": [],
+            "promotionInfoResponse": [],
+            "minAmount": null,
+            "minAmountB2b": null,
+            "jumpValue": 1,
+            "jumpValueB2b": 1,
+            "originalMinAmount": null,
+            "originalMinAmountB2b": null,
+            "refundPeriodAfterExpiryB2b": null,
+            "weekend": null
+        },
+        "catalog": {
+            "id": 15154,
+            "name": "Vé cáp treo/Công viên",
+            "mapVGS": "S1",
+            "logo": {
+                "original": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/asset1/_default_upload_bucket/img_right_1.jpg",
+                "thumb640": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/78948/image-thumb__78948__640/img_right_1.jpg",
+                "thumb1000": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/78948/image-thumb__78948__1000/img_right_1.jpg",
+                "thumb1600": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/78948/image-thumb__78948__1600/img_right_1.jpg",
+                "thumb1920": "https://dev-ecommerce-cdn.azureedge.net/ticket-diff-dev/service-sites/thumbnail1/_default_upload_bucket/78948/image-thumb__78948__1920/img_right_1.jpg"
+            }
+        },
+        "zone": null,
+        "restaurant": {
+            "id": 136563,
+            "name": "Cả ngày",
+            "label": "Cả ngày",
+            "image": null
+        },
+        "errorTicket": null,
+        "errorTime": null,
+        "usedArea2": "06:00",
+        "inventory": 30000,
+        "created_at": "1739182030404",
+        "itemKey": "136440__06:00_2025-02-15",
+        "max_inventory": 100,
+        "usedAreas2": [
+            {
+                "label": "06:00",
+                "value": "06:00"
+            }
+        ],
+        "amountAdult": "2",
+        "amountChild": "3",
+        "areaType": "1",
+        "showId": "136388",
+        "ticketShowId": 136440,
+        "originalAdultPrice": 200000,
+        "originalChildPrice": 200000,
+        "adultPrice": 200000,
+        "childPrice": 200000
+    }
+]

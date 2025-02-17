@@ -1,0 +1,547 @@
+openapi: 3.0.0
+info:
+  title: DEVOPS_APIM_API_TITLE
+  version: 1.0.0
+servers:
+  - url: DEVOPS_APIM_API_BACKEND_URL
+components:
+  securitySchemes:
+    noauthAuth:
+      type: http
+      scheme: noauth
+tags:
+  - name: B2B
+
+paths:
+  /{lang}/api/b2c/translator/listing:
+      get:
+        tags:
+          - default
+        summary: en/api/b2c/translator/listing
+        parameters:
+          - name: accept
+            in: header
+            schema:
+              type: string
+            example: application/json, text/plain, */*
+          - name: accept-language
+            in: header
+            schema:
+              type: string
+            example: en,vi-VN;q=0.9,vi;q=0.8,en-US;q=0.7,la;q=0.6,id;q=0.5
+          - name: cache-control
+            in: header
+            schema:
+              type: string
+            example: no-cache
+          - name: origin
+            in: header
+            schema:
+              type: string
+            example: https://sw-fe-ticket-diff-dev.sungroup.com.vn
+          - name: pragma
+            in: header
+            schema:
+              type: string
+            example: no-cache
+          - name: referer
+            in: header
+            schema:
+              type: string
+            example: https://sw-fe-ticket-diff-dev.sungroup.com.vn/
+          - name: sec-ch-ua
+            in: header
+            schema:
+              type: string
+            example: '"Google Chrome";v="123", "Not:A-Brand";v="8", "Chromium";v="123"'
+          - name: sec-ch-ua-mobile
+            in: header
+            schema:
+              type: string
+            example: '?0'
+          - name: sec-ch-ua-platform
+            in: header
+            schema:
+              type: string
+            example: '"Windows"'
+          - name: sec-fetch-dest
+            in: header
+            schema:
+              type: string
+            example: empty
+          - name: sec-fetch-mode
+            in: header
+            schema:
+              type: string
+            example: cors
+          - name: sec-fetch-site
+            in: header
+            schema:
+              type: string
+            example: same-site
+          - name: user-agent
+            in: header
+            schema:
+              type: string
+            example: >-
+              Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+              like Gecko) Chrome/123.0.0.0 Safari/537.36
+          - name: lang
+            in: path
+            schema:
+              type: string
+            required: true
+        responses:
+          '200':
+            description: OK
+            headers:
+              Date:
+                schema:
+                  type: string
+                  example: Mon, 15 Apr 2024 04:03:36 GMT
+              Content-Type:
+                schema:
+                  type: string
+                  example: application/json
+              Transfer-Encoding:
+                schema:
+                  type: string
+                  example: chunked
+              Connection:
+                schema:
+                  type: string
+                  example: keep-alive
+              Cache-Control:
+                schema:
+                  type: string
+                  example: no-cache, private
+              X-Powered-By:
+                schema:
+                  type: string
+                  example: pimcore
+              Content-Language:
+                schema:
+                  type: string
+                  example: vi
+              X-Debug-Token:
+                schema:
+                  type: string
+                  example: 575f9c
+              X-Pimcore-Output-Cache-Disable-Reason:
+                schema:
+                  type: string
+                  example: 'HTTP Header Cache-Control: no-cache was sent'
+              X-Debug-Token-Link:
+                schema:
+                  type: string
+                  example: http://swg-ticket-diff-dev.sungroup.com.vn/_profiler/575f9c
+              Vary:
+                schema:
+                  type: string
+                  example: Accept-Encoding
+              Content-Encoding:
+                schema:
+                  type: string
+                  example: gzip
+              Access-Control-Allow-Origin:
+                schema:
+                  type: string
+                  example: '*'
+              Access-Control-Allow-Credentials:
+                schema:
+                  type: boolean
+                  example: 'true'
+              Access-Control-Allow-Methods:
+                schema:
+                  type: string
+                  example: GET, PUT, POST, DELETE, PATCH, OPTIONS
+              Access-Control-Allow-Headers:
+                schema:
+                  type: string
+                  example: >-
+                    Accept, Accept-Version, Access-Control-Allow-Headers,
+                    Access-Token, AccessToken, Authorization, Cache-Control,
+                    Content-Length, Content-MD5, Content-Type, DNT, Date,
+                    If-Modified-Since, Keep-Alive, User-Agent, X-Access-Token,
+                    X-Auth-Token, X-CustomHeader, X-Requested-With, accessToken,
+                    accesstoken, content-type
+              Access-Control-Max-Age:
+                schema:
+                  type: integer
+                  example: '1728000'
+              X-Content-Type-Options:
+                schema:
+                  type: string
+                  example: nosniff
+              X-XSS-Protection:
+                schema:
+                  type: string
+                  example: 1; mode=block
+              Strict-Transport-Security:
+                schema:
+                  type: string
+                  example: max-age=31536000; includeSubdomains;
+            content:
+              application/json:
+                schema:
+                  type: object
+                example:
+                  b2c.CodeExpireIn: Mã sẽ hết hiệu lực trong
+                  b2c.account.mng: Quản lý tài khoản
+                  b2c.action.failed: Thao tác không thành công
+                  b2c.auth.enterOtpText: Vui lòng nhập mã xác thực đã được gửi về email để đăng nhập
+                  b2c.auth.forgotPassBtn: Quên mật khẩu
+                  b2c.auth.loginSuccess: Đăng nhập thành công
+                  b2c.auth.registerSuccessContent: Chúc mừng bạn đã đăng ký thành công
+                  b2c.auth.registerSuccessTitle: Đăng ký tài khoản thành công
+                  b2c.auth.verifyOtpText: Xác thực tài khoản
+                  b2c.btn.buyMore: Mua thêm đơn hàng
+                  b2c.btn.cancel: Hủy
+                  b2c.btn.payNow: Thanh toán ngay
+                  b2c.btn.reType: Nhập lại
+                  b2c.btn.remove: Xóa
+                  b2c.btn.retry: Thử lại
+                  b2c.btn.saveInfo: Lưu thông tin
+                  b2c.fillOtpToCompleteRegister: >-
+                    Vui lòng nhập mã xác thực đã được gửi về email để hoàn tất
+                    đăng ký.
+                  b2c.form-policy.description: >-
+                    Quý vị vui lòng xác nhận thông tin bên dưới đã chính xác, vì
+                    mã đặt vé sẽ được hệ thống gửi tới email quý vị cung cấp.
+                  b2c.form-policy.title: Điều khoản dịch vụ
+                  b2c.form.address: Địa chỉ
+                  b2c.form.birth: Ngày sinh
+                  b2c.form.email: Email
+                  b2c.form.gender: Giới tính
+                  b2c.form.genderPlaceholder: Chọn giới tính
+                  b2c.form.invalid: không hợp lệ
+                  b2c.form.invalid-phone: Số điện thoại không hợp lệ
+                  b2c.form.name: Họ và tên
+                  b2c.form.namePlaceholder: Họ tên
+                  b2c.form.passValid: >-
+                    Mật khẩu phải có ít nhất 1 chữ thường, 1 chữ hoa, 1 số và 1 ký
+                    tự đặc biệt
+                  b2c.form.password: Mật khẩu
+                  b2c.form.phone: Số điện thoại
+                  b2c.form.re-password: Nhập lại mật khẩu
+                  b2c.form.rePassValid: Mật khẩu không khớp
+                  b2c.form.txtLogin: >-
+                    Chào mừng bạn quay lại cùng Sun World, đăng nhập ngay để khám
+                    phá nhiều dịch vụ hấp dẫn
+                  b2c.form.txtRegister: >-
+                    Chào mừng bạn quay lại cùng Sun World, đăng ký ngay để khám
+                    phá nhiều dịch vụ hấp dẫn
+                  b2c.form.txtRequestRegister: Bạn chưa có tài khoản?
+                  b2c.form.validate-chars: ký tự
+                  b2c.form.validate-max-chars-1: chỉ được tối đa
+                  b2c.form.validate-min-chars-1: phải có tối thiểu
+                  b2c.form.validate-require: không được để trống
+                  b2c.form.wrongPhoneFormat: Số điện thoại sai định dạng
+                  b2c.freeticket.chooseTicket: Chọn sản phẩm
+                  b2c.freeticket.chooseTicketContent: Chọn sản phẩm trong thời gian phù hợp với bạn
+                  b2c.freeticket.choosedTicket: Sản phẩm đã chọn
+                  b2c.freeticket.deactive-program: Chương trình đã kết thúc
+                  b2c.freeticket.email: Email
+                  b2c.freeticket.form.continueButton: Tiếp tục
+                  b2c.freeticket.form.customerID: Số CMND/CCCD
+                  b2c.freeticket.form.name: Họ và tên
+                  b2c.freeticket.form.phone: Số điện thoại
+                  b2c.freeticket.formTitle: Thông tin định danh
+                  b2c.freeticket.getTicketNow: Nhận vé ngay
+                  b2c.freeticket.introTitle: Giới thiệu
+                  b2c.freeticket.listing-null: >-
+                    Hệ thống hiện tại đã phát hết vé, vui lòng quay lại vào lần
+                    sau!
+                  b2c.freeticket.maxTicketMessage: Bạn chỉ được nhận tối đa {number} vé!
+                  b2c.freeticket.register: Đăng ký thông tin
+                  b2c.freeticket.registerContent: Vui lòng điền đầy đủ và chính xác thông tin của bạn
+                  b2c.gender.female: Nữ
+                  b2c.gender.male: Nam
+                  b2c.invalid_email: Email không hợp lệ
+                  b2c.menu.account: Thông tin cá nhân
+                  b2c.menu.logout: Đăng xuất
+                  b2c.message.IncorrectOtp: b2c.message.IncorrectOtp
+                  b2c.message.OtpRequired: OTP không được để trống
+                  b2c.message.mailExits: Email đã tồn tại trong hệ thống
+                  b2c.message.tryNetwork: Quý khách vui lòng kiểm tra lại kết nối mạng.
+                  b2c.message.updatePersonInfoSuccess: Cập nhật thông tin Khách hàng thành công.
+                  b2c.message.wrongOTP: Nhập sai mã OTP
+                  b2c.order.cancelled: Đã hủy
+                  b2c.order.paymentPending: Chờ thanh toán
+                  b2c.order.successfully: Thành công
+                  b2c.text.add-cart: Thêm giỏ hàng
+                  b2c.text.adult-ticket: Vé người lớn
+                  b2c.text.all: Tất cả
+                  b2c.text.child-ticket: Vé trẻ em
+                  b2c.text.endow: Ưu đãi
+                  b2c.text.featured-news: Tin tức nổi bật
+                  b2c.text.filter-objects: Lọc đối tượng
+                  b2c.text.filter-ticket-type: Lọc loại vé
+                  b2c.text.grandstand-diagram: Sơ đồ khán đài
+                  b2c.text.intra-province-ticket: Vé nội tỉnh
+                  b2c.text.logoutConfirm: Quý khách có chắc chắn\n\rmuốn đăng xuất khỏi hệ thống này?
+                  b2c.text.out-of-province-ticket: Vé ngoại tỉnh
+                  b2c.text.see-detail: Xem chi tiết
+                  b2c.text.select-usage-date: Chọn ngày sử dụng
+                  b2c.text.sunworld-park: Công viên SUN WORLD
+                  b2c.text.zone: Khán đài
+                  b2c.txt.MSG001: |
+                    Không có sản phẩm nào phù hợp với tìm kiếm của Quý khách
+                  b2c.txt.MSG019: Sơ đồ khán đài không có sẵn. Hãy thử lại sau.
+                  b2c.txt.VAT-included: Đã bao gồm thuế GTGT
+                  b2c.txt.accept-policy: Tôi đồng ý với mọi điều khoản thanh toán của Sun World
+                  b2c.txt.account: Tài khoản
+                  b2c.txt.ageType.1: Người lớn
+                  b2c.txt.ageType.2: Trẻ em
+                  b2c.txt.amount-after-reduce: Tổng tiền sau giảm
+                  b2c.txt.areaType.1: Nội tỉnh
+                  b2c.txt.areaType.2: Ngoại tỉnh
+                  b2c.txt.attractive-offers: Ưu đãi hấp dẫn
+                  b2c.txt.back: Quay lại
+                  b2c.txt.back-to-home: Trở về trang chủ
+                  b2c.txt.buy-now: Mua ngay
+                  b2c.txt.buy-ticket-now: Mua vé ngay
+                  b2c.txt.buyTicket: Đặt vé
+                  b2c.txt.buyTicketNow: |-
+  
+                    Đặt vé ngay
+                  b2c.txt.cancelled: Đã huỷ
+                  b2c.txt.cart: Giỏ hàng
+                  b2c.txt.cartEmpty: Quý khách chưa có sản phẩm nào trong giỏ hàng
+                  b2c.txt.cfRemoveTicket: Quý khách có chắc chắn muốn xóa vé ra khỏi giỏ hàng?
+                  b2c.txt.changePass: Đổi mật khẩu
+                  b2c.txt.changePassSuccessContent: Chúc mừng bạn đã đổi mật khẩu thành công
+                  b2c.txt.changePassSuccessTitle: Đổi mật khẩu thành công
+                  b2c.txt.checked-all: Chọn tất cả
+                  b2c.txt.chooseAddress: Chọn địa điểm muốn đến
+                  b2c.txt.close: Đóng
+                  b2c.txt.confirm: Xác nhận
+                  b2c.txt.confirmExists: >-
+                    Những thay đổi bạn đã thực hiện có thể không được lưu. \nBạn
+                    có chắc chắn rời khỏi màn hình này?
+                  b2c.txt.contactHotline: Vui lòng liên hệ Hotline để được tư vấn, hỗ trợ
+                  b2c.txt.continue: Tiếp tục
+                  b2c.txt.count-ticket-left: vé còn lại
+                  b2c.txt.customer: Quý khách
+                  b2c.txt.date: Ngày
+                  b2c.txt.date-order: Ngày đặt vé
+                  b2c.txt.date-use: Ngày sử dụng
+                  b2c.txt.detail-order: Xem đơn hàng
+                  b2c.txt.detail-pay: Thông tin thanh toán
+                  b2c.txt.detail-policy-pay: Xem chi tiết chính sách thanh toán
+                  b2c.txt.detail-show-no-performance: Không có vé trong thời gian đã chọn
+                  b2c.txt.detail-show.validateDate: |-
+  
+                    Vui lòng chọn ngày để chọn giờ diễn
+                  b2c.txt.detail-show.validateZone: Vui lòng chọn ngày & khung giờ để chọn chỗ ngồi
+                  b2c.txt.detailOrder: Chi tiết đơn hàng
+                  b2c.txt.directOut: >-
+                    Những thay đổi bạn đã thực hiện có thể không được lưu. \nBạn
+                    có chắc chắn rời khỏi màn hình này?
+                  b2c.txt.discount: Giảm giá
+                  b2c.txt.enterMailForgot: Vui lòng nhập email đã đăng ký để nhận mã xác thực
+                  b2c.txt.enterOtpChangePass: >-
+                    Vui lòng nhập mã xác thực đã được gửi về email để đổi mật
+                    khẩu.
+                  b2c.txt.error_past_time: >-
+                    Vé Quý khách lựa chọn đã quá thời gian sử dụng. Xin vui lòng
+                    chọn lại.
+                  b2c.txt.event: Sự kiện
+                  b2c.txt.existing: Hiện còn
+                  b2c.txt.forgotPass: Quên mật khẩu
+                  b2c.txt.fullName: Họ & tên
+                  b2c.txt.fullNameRequired: Họ và tên không được để trống
+                  b2c.txt.getTicket: Chọn vé ngay
+                  b2c.txt.giftInOrder: Quà tặng theo đơn
+                  b2c.txt.goHome: Về trang chủ
+                  b2c.txt.guide: Hướng dẫn sử dụng
+                  b2c.txt.home: Trang chủ
+                  b2c.txt.hotline: 088.604.5888
+                  b2c.txt.hours: Khung giờ
+                  b2c.txt.identityCard: CCCD/CMTND
+                  b2c.txt.info-customer: Thông tin khách hàng
+                  b2c.txt.info-order: Thông tin đơn hàng
+                  b2c.txt.info-pay: Thông tin thanh toán
+                  b2c.txt.info-personally: Thông tin cá nhân
+                  b2c.txt.listErrOrder: Thông tin đặt hàng / Tài khoản ngân hàng / Kết nối mạng
+                  b2c.txt.login: Đăng nhập
+                  b2c.txt.loginNow: Đăng nhập ngay
+                  b2c.txt.modal-ticket-content: Nội dung
+                  b2c.txt.modal-ticket-name: Tên show
+                  b2c.txt.modal-ticket-title: Thông tin
+                  b2c.txt.needToPay: Bạn còn đơn hàng cần thanh toán
+                  b2c.txt.newAndEvent: Tin tức & sự kiện
+                  b2c.txt.no-show: Không có show diễn phù hợp
+                  b2c.txt.nodataCancelled: Quý khách chưa có sản phẩm nào đã huỷ
+                  b2c.txt.nodataHistory: Quý khách chưa có sản phẩm nào chờ thanh toán
+                  b2c.txt.nodataPaymentPending: Quý khách chưa có sản phẩm nào chờ thanh toán
+                  b2c.txt.nodataSuccess: Quý khách chưa có sản phẩm nào thanh toán thành công
+                  b2c.txt.notFound: Trang không tìm thấy, vui lòng quay về trang chủ.
+                  b2c.txt.numTicketSelected: Vé đã chọn (số lượng)
+                  b2c.txt.numberPhone: Số điện thoại phải có tối thiểu ${min} ký tự
+                  b2c.txt.offers: |-
+  
+                    Ưu đãi không thể bỏ lỡ
+                  b2c.txt.or: hoặc
+                  b2c.txt.order: Đơn hàng
+                  b2c.txt.order-code: Mã đơn
+                  b2c.txt.order-history: Lịch sử mua hàng
+                  b2c.txt.orderErrDesc: >-
+                    Đã xảy ra lỗi trong quá trình thanh toán. Bạn vui lòng kiểm
+                    tra các thông tin sau:
+                  b2c.txt.orderFailed: Đặt vé không thành công
+                  b2c.txt.orderNumber: Mã đơn hàng
+                  b2c.txt.orderSuccessContent: >-
+                    Đơn hàng của bạn đã thanh toán thành công, chúng tôi sẽ gửi
+                    thông tin đơn hàng đến Email của bạn. Vui lòng kiểm tra Email.
+                  b2c.txt.orderSuccessTitle: Đặt vé thành công
+                  b2c.txt.otpPayment: >-
+                    Vui lòng nhập mã xác thực đã được gửi về email để hoàn tất
+                    thanh toán.
+                  b2c.txt.paid: Đã thanh toán
+                  b2c.txt.park: Công viên
+                  b2c.txt.pay: Thanh toán
+                  b2c.txt.payIn: Thanh toán trong
+                  b2c.txt.payment: Thanh toán
+                  b2c.txt.payment-fail-description: >-
+                    Rất tiết!, quá trình mua vé đã xảy ra lỗi. Quý khách vui lòng
+                    kiểm tra lại thông tin đặt hàng. Nếu có bất kỳ thắc mắc nào
+                    xin liên hệ
+                  b2c.txt.payment-fail-title: Thanh toán thất bại
+                  b2c.txt.payment-success-description: >-
+                    Quý khách đã đặt vé thành công, vui lòng kiểm tra thông tin
+                    đơn hàng. Mail xác nhận sẽ được gửi về sau ít phút.
+                  b2c.txt.payment-success-subDescription: >-
+                    Vé được nhận sẽ đi thẳng đến quầy soát vé và không thông qua
+                    phòng vé.<br />
+  
+                    Khách hàng vui lòng bấm vào chữ "<strong>Xem vé</strong>" để
+                    nhận vé và lưu vào điện thoại để trình qua cổng.
+                  b2c.txt.payment-success-title: Mua vé thành công
+                  b2c.txt.paymentMethod: Phương thức thanh toán
+                  b2c.txt.paymentPolicy: Điều khoản thanh toán
+                  b2c.txt.paymentSuccess: Hoàn tất
+                  b2c.txt.paymentTypeInfo: Quý khách vui lòng nhập thông tin bên dưới
+                  b2c.txt.pending: Chờ thanh toán
+                  b2c.txt.phone: Số điện thoại
+                  b2c.txt.phoneRequired: Số điện thoại không được để trống
+                  b2c.txt.policy-1-description: Thanh toán 100% giá trị vé
+                  b2c.txt.policy-1-title: Chính sách thanh toán
+                  b2c.txt.policy-2-description: Hủy đặt vé sẽ tính phí 100% giá trị đặt vé
+                  b2c.txt.policy-2-title: Chính sách hủy
+                  b2c.txt.policy-3-description: Hoàn lại 100% khi thanh toán lỗi
+                  b2c.txt.policy-3-title: Chính sách hoàn tiền
+                  b2c.txt.policy-title: |-
+  
+                    Chính sách
+                  b2c.txt.policyTitle: Điều khoản dịch vụ
+                  b2c.txt.pressPayToShowOffer: Nhấn "Thanh toán" để hiển thị ưu đãi
+                  b2c.txt.price: Số tiền
+                  b2c.txt.price-ticket: Giá vé
+                  b2c.txt.print-date: Ngày in vé
+                  b2c.txt.print-ticket: In vé
+                  b2c.txt.provincialContent: >-
+                    *Quý khách vui lòng mang theo CCCD/CMTND để làm thủ tục nhận
+                    chính sách ưu đãi khi sử dụng vé.
+                  b2c.txt.provincialCustomer: khách hàng hưởng chính sách nội tỉnh
+                  b2c.txt.provincialTitle: Thông tin dành cho khách hàng hưởng chính sách nội tỉnh
+                  b2c.txt.pttt: PTTT
+                  b2c.txt.reSendCode: Gửi lại mã xác nhận
+                  b2c.txt.read-more: Tìm hiểu thêm
+                  b2c.txt.register: Đăng ký
+                  b2c.txt.registerNow: Đăng ký ngay
+                  b2c.txt.requestInfo: Hoặc vui lòng nhập thông tin
+                  b2c.txt.retry: Quý khách vui lòng thao tác lại
+                  b2c.txt.search: Tìm kiếm
+                  b2c.txt.see-grandstand-diagram: Xem sơ đồ khán đài
+                  b2c.txt.select-date: |-
+  
+                    Chọn ngày
+                  b2c.txt.select-show: Chọn show
+                  b2c.txt.select-tickets: Chọn vé
+                  b2c.txt.select-time-frame: Chọn khung giờ
+                  b2c.txt.select-zone: Chọn khán đài
+                  b2c.txt.selectDate: Chọn ngày
+                  b2c.txt.selectService: Chọn dịch vụ
+                  b2c.txt.serialCode: Mã serial
+                  b2c.txt.success: Thành công
+                  b2c.txt.termContent: >-
+                    Do mỗi nhà cung cấp dịch vụ lưu trữ có một số nền tảng dịch vụ
+                    lưu
+  
+                    trữ dữ liệu có định dạng không tương thích hoặc độc quyền, ...
+                    khiến
+  
+                    chúng tôi không thể hỗ trợ việc chuyển dữ liệu website từ máy
+                    chủ
+  
+                    bên thứ ba. Hoặc do phụ thuộc vào các yếu tố khác như: đường
+                    truyền,
+  
+                    kích thước dữ liệu, hiệu suất của các máy chủ… nên chúng tôi
+                    không
+  
+                    đảm bảo cũng như không phải chịu trách nhiệm pháp lý với bất
+                    cứ sự
+  
+                    chậm trễ nào liên quan đến việc chuyển đổi dữ liệu.Hoặc do phụ
+                    thuộc
+  
+                    vào các yếu tố khác như: đường truyền, kích thước dữ liệu,
+                    hiệu suất
+  
+                    của các máy chủ… nên chúng tôi không đảm bảo cũng như không
+                    phải
+  
+                    chịu trách nhiệm pháp lý với bất
+                  b2c.txt.ticket: vé
+                  b2c.txt.ticket-date: Ngày sử dụng
+                  b2c.txt.ticket-free-note: >-
+                    Quý khách mang theo giấy tờ tùy thân (Chứng minh nhân dân hoặc
+                    Căn cước công dân, hộ chiếu) để kiểm tra đúng người dân Phú
+                    Quốc tại cổng vào<br />
+  
+                    Vé chỉ sử dụng cho người dân Phú Quốc, không được bán.<br />
+  
+                    Xuất trình vé tại cửa, mỗi người một vé. Vé chỉ sử dụng đúng
+                    ngày và đúng suất diễn.<br />
+  
+                    <strong>Vui lòng đến sớm 30 phút trước khi show diễn bắt đầu
+                    để ổn định chỗ ngồi.</strong><br />
+  
+                    <br />
+  
+                    <strong>Lưu ý</strong><br />
+  
+                    Vé không hoàn, không hủy.
+                  b2c.txt.ticket-note: >-
+                    Note: Ticket is only valid on time and date printed. You may
+                    get wet. Weather conditions may impact the show experience,
+                    including cancellations in lightning and wind conditions. No
+                    refunds
+                  b2c.txt.ticket-seat: Ghế ngồi
+                  b2c.txt.ticket-selected: Vé đã chọn
+                  b2c.txt.ticket-time: Suất diễn
+                  b2c.txt.ticket-zone: Khu vực khán đài
+                  b2c.txt.ticketAmount: Số lượng vé
+                  b2c.txt.ticketList: Danh sách vé
+                  b2c.txt.ticketName: Tên vé
+                  b2c.txt.ticket_existing: vé
+                  b2c.txt.tickets-not-enough: Số vé hiện tại không đủ
+                  b2c.txt.timeoutPayment: Đã hết thời gian thanh toán.
+                  b2c.txt.topSellingTickets: Top các vé bán chạy
+                  b2c.txt.total: Tổng
+                  b2c.txt.total-amount: Tổng tiền
+                  b2c.txt.totalDiscount: Tổng giảm giá
+                  b2c.txt.totalPrice: Thành tiền
+                  b2c.txt.txtRequestLogin: Bạn đã có tài khoản?
+                  b2c.txt.validateDate: Vui lòng chọn ngày
+                  b2c.txt.validatePerformance: Vui lòng chọn khung giờ
+                  b2c.txt.validateZone: Vui lòng chọn khán đài
+                  b2c.txt.viewMore: Xem thêm
+                  b2c.txt.viewPDF: Xem PDF vé
+                  b2c.txt.viewShort: Thu gọn
+                  b2c.txt.watch-ticket: Xem vé
+                  b2c.txt.wellcome: Chào mừng Quý khách ${name} đã đăng nhập thành công
+                  b2c.txt.zone: Khán đài
+                  b2c.user.login.action: Đăng nhập

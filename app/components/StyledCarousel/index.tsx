@@ -1,0 +1,1 @@
+export { default as TicketCarousel } from './TicketCarousel'
