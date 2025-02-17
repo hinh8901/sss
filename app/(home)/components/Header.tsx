@@ -1,10 +1,10 @@
 import { useId } from "react"
 import Image from "next/image"
 import clsx from "clsx"
+import { useController } from "react-hook-form"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 
 import CustomSelect from "@/app/components/CustomSelect"
-import { useController } from "react-hook-form"
 import CustomDatePicker from "@/app/components/CustomDatePicker"
 import WhoComingSelect from "./WhoComingSelect"
 import { Participant } from "@/components/booking/who-coming"
@@ -13,16 +13,16 @@ import { Button } from "@/components/ui/button"
 
 interface HeaderProps {
   landData: Record<string, any>[] | null
+  onChangeLand: (land: string) => void
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const { landData } = props
+  const { landData, onChangeLand } = props
   const flexibleCheckboxId = useId()
 
   const {
     field: {
-      value: siteCode,
-      onChange: onChangeSiteCode
+      value: siteCode
     }
   } = useController({
     name: 'sitecode'
@@ -75,6 +75,10 @@ const Header: React.FC<HeaderProps> = (props) => {
     }))
   }
 
+  const onViewTickets = () => {
+    console.log('flow: ', siteCode, dateValue, flexiableValue, memberData)
+  }
+
   return (
     <div className="-mt-8 -mx-4">
       <Carousel className="w-full">
@@ -105,7 +109,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             label="Where to?"
             options={getLandOptions()}
             value={siteCode}
-            onValueChange={onChangeSiteCode}
+            onValueChange={onChangeLand}
           />
           <CustomDatePicker
             label="When your trip?"
@@ -134,7 +138,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                 Show me flexible options
               </label>
             </div>
-            <Button className="h-[38px] p-4">
+            <Button className="h-[38px] p-4" onClick={onViewTickets}>
               View tickets
             </Button>
           </div>

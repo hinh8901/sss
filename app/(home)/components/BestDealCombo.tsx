@@ -1,15 +1,16 @@
 import clsx from "clsx"
 
-import TicketComboItem from "./TicketComboItem"
+import TicketComboItem, { TicketComboItemSkeleton } from "./TicketComboItem"
 
 interface BestDealComboProps {
   bestComboSellerData: Record<string, any>[] | null
+  isLoading: boolean
 }
 
 const BestDealCombo: React.FC<BestDealComboProps> = (props) => {
-  const { bestComboSellerData } = props
+  const { bestComboSellerData, isLoading } = props
 
-  if (!bestComboSellerData) return null
+  if (!isLoading && (!bestComboSellerData || !bestComboSellerData.length)) return null
 
   return (
     <div>
@@ -22,7 +23,15 @@ const BestDealCombo: React.FC<BestDealComboProps> = (props) => {
         "gap-4 lg:gap-6"
       )}>
         {
-          bestComboSellerData.map((item: any) => (
+          isLoading ? (
+            <>
+              <TicketComboItemSkeleton />
+              <TicketComboItemSkeleton />
+              <TicketComboItemSkeleton />
+              <TicketComboItemSkeleton />
+            </>
+          ) :
+          bestComboSellerData?.map((item: any) => (
             <TicketComboItem
               key={item?.id}
               name={item?.name}

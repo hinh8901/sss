@@ -9,14 +9,12 @@ interface getBestSellerParams {
 }
 
 export const getBestSeller = async (params?: getBestSellerParams) => {
-  "use server"
-
   const {
     page = 1,
     limit = 8,
     channel = "b2c",
     ticketType = "single",
-    land = "sunparadiselandPhuQuoc",
+    land = "",
   } = params ?? {}
 
   try {
@@ -36,8 +34,6 @@ export const getBestSeller = async (params?: getBestSellerParams) => {
 }
 
 export const getLandList = async () => {
-  "use server"
-
   try {
     const { data } = await splApiCMS.get(`sunparadiseland/listing`)
     return data
@@ -47,8 +43,6 @@ export const getLandList = async () => {
 }
 
 export const getAgeFilter = async () => {
-  "use server"
-
   try {
     const { data } = await splApi.get(`spl/filter/age`)
     return data

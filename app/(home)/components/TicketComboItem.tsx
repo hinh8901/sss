@@ -6,6 +6,7 @@ import PriceBlock from "@/app/components/PriceBlock"
 import { Button } from "@/components/ui/button"
 import { TicketCarousel } from "@/app/components/StyledCarousel"
 import { isNil } from "@/utils"
+import Skeleton from "@/app/components/Skeleton"
 
 export type TicketComboItemProps = {
   imgURL: string | null | undefined;
@@ -16,6 +17,26 @@ export type TicketComboItemProps = {
   listedPrice: number | null;
   discountPer?: number;
   childTickets?: Record<string, any>[] | null;
+}
+
+export const TicketComboItemSkeleton: React.FC = () => {
+  return (
+    <div
+      className={clsx(
+        "rounded-lg",
+      )}>
+      <div className={
+        clsx(
+          "h-72",
+          "flex items-start justify-between",
+          "lg:flex-row-reverse lg:justify-end",
+          "gap-x-3 lg:gap-x-6",
+        )
+      }>
+        <Skeleton className="h-full" />
+      </div>
+    </div>
+  )
 }
 
 const TicketComboItem: React.FC<TicketComboItemProps> = (props) => {

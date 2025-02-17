@@ -18,10 +18,10 @@ export default async function Home() {
 
   return (
     <HomeClient
-      bestSellerData={bestSellerResponse?.data}
-      bestComboSellerData={bestComboSellerResponse?.data}
-      landData={landResponse.data}
-      ageFilterData={ageFilterResponse?.age}
+      bestSellerServerData={bestSellerResponse?.data}
+      bestComboSellerServerData={bestComboSellerResponse?.data}
+      landServerData={landResponse.data}
+      ageFilterServerData={ageFilterResponse?.age}
     />
   )
 }

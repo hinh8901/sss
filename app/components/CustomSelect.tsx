@@ -181,7 +181,7 @@ const CustomSelect: React.FC<CustomSelectProps> = (props) => {
 
               return (
                 <SelectItem
-                  key={option.value}
+                  key={option.label + valueAsString}
                   value={valueAsString}
                   selected={value === valueAsString}
                 >{option.label}</SelectItem>

@@ -4,12 +4,13 @@ import TicketItem, { TicketItemSkeleton } from "./TicketItem"
 
 interface BestSellerProps {
   bestSellerData: Record<string, any>[] | null
+  isLoading: boolean
 }
 
 const BestSeller: React.FC<BestSellerProps> = (props) => {
-  const { bestSellerData } = props
+  const { bestSellerData, isLoading } = props
 
-  if (!bestSellerData) return null
+  if (!isLoading && (!bestSellerData || !bestSellerData.length)) return null
 
   return (
     <div>
@@ -22,8 +23,19 @@ const BestSeller: React.FC<BestSellerProps> = (props) => {
         "sm:grid-cols-3 md:gap-x-6 md:gap-y-9",
         "xl:grid-cols-4",
       )}>
-        {
-          bestSellerData.map((item: any) => (
+        {isLoading ? (
+          <>
+            <TicketItemSkeleton />
+            <TicketItemSkeleton />
+            <TicketItemSkeleton />
+            <TicketItemSkeleton />
+            <TicketItemSkeleton />
+            <TicketItemSkeleton />
+            <TicketItemSkeleton />
+            <TicketItemSkeleton />
+          </>
+        ) :
+          bestSellerData?.map((item: any) => (
             <TicketItem
               key={item?.id}
               name={item?.name}

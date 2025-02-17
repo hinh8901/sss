@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import clsx from "clsx"
 import { useForm, FormProvider } from "react-hook-form"
 import { format } from "date-fns"
@@ -8,12 +9,13 @@ import BestSeller from "./BestSeller"
 import BestDealCombo from "./BestDealCombo"
 import LandList from "./LandList"
 import Header from "./Header"
+import { getBestSeller } from "@/services/ticket-services"
 
 interface HomeClientProps {
-  bestSellerData: Record<string, any>[] | null
-  bestComboSellerData: Record<string, any>[] | null
-  landData: Record<string, any>[] | null
-  ageFilterData: Record<string, any>[] | null
+  bestSellerServerData: Record<string, any>[] | null
+  bestComboSellerServerData: Record<string, any>[] | null
+  landServerData: Record<string, any>[] | null
+  ageFilterServerData: Record<string, any>[] | null
 }
 
 type JourneyFormValues = {
@@ -24,13 +26,20 @@ type JourneyFormValues = {
 }
 
 const HomeClient: React.FC<HomeClientProps> = (props) => {
-  const { bestSellerData, bestComboSellerData, landData, ageFilterData } = props
+  const { bestSellerServerData, bestComboSellerServerData, landServerData, ageFilterServerData } = props
+
+  const [bestSellerData, setBestSellerData] = useState(bestSellerServerData)
+  const [bestComboSellerData, setBestComboSellerData] = useState(bestComboSellerServerData)
+  const [landData, setLandData] = useState(landServerData)
+
+  const [isFetchingBestSellerData, setIsFetchingBestSellerData] = useState(false)
+  const [isFetchingBestComboSellerData, setIsFetchingBestComboSellerData] = useState(false)
 
   const journeyForm = useForm<JourneyFormValues>({
     defaultValues: {
-      sitecode: landData?.find(land => land?.default)?.sitecode,
+      sitecode: landServerData?.find(land => land?.default)?.sitecode,
       date: format(new Date(), 'yyyy-MM-dd'),
-      members: ageFilterData?.map(item => ({
+      members: ageFilterServerData?.map(item => ({
         label: item.name,
         code: item.code,
         amount: item.code === "1" ? 1 : 0,
@@ -39,7 +48,34 @@ const HomeClient: React.FC<HomeClientProps> = (props) => {
     }
   })
 
-  console.log('flow: journeyForm', journeyForm.getValues())
+  const onFetchingBestSellerData = async (land: string) => {
+    try {
+      setIsFetchingBestSellerData(true)
+      const { data } = await getBestSeller({ land })
+      setBestSellerData(data)
+    } catch (error) {
+    } finally {
+      setIsFetchingBestSellerData(false)
+    }
+  }
+
+  const onFetchingBestComnboSellerData = async (land: string) => {
+    try {
+      setIsFetchingBestComboSellerData(true)
+      const { data } = await getBestSeller({ land, ticketType: 'combo' })
+      setBestComboSellerData(data)
+    } catch (error) {
+    } finally {
+      setIsFetchingBestComboSellerData(false)
+    }
+  }
+
+  const onChangeLand = async (land: string) => {
+    journeyForm.setValue('sitecode', land)
+    onFetchingBestSellerData(land)
+    onFetchingBestComnboSellerData(land)
+    setLandData(landServerData?.filter(landServer => landServer.sitecode !== land) ?? [])
+  }
 
   return (
     <div className={clsx(
@@ -47,18 +83,23 @@ const HomeClient: React.FC<HomeClientProps> = (props) => {
     )}>
       <FormProvider {...journeyForm}>
         <Header
-          landData={landData}
+          landData={landServerData}
+          onChangeLand={onChangeLand}
         />
-        <div className="py-5 md:py-12 lg:px-4">
-          <BestSeller bestSellerData={bestSellerData} />
-        </div>
+        {(isFetchingBestSellerData || !!bestSellerData?.length) && (
+          <div className="py-5 md:py-12 lg:px-4">
+            <BestSeller bestSellerData={bestSellerData} isLoading={isFetchingBestSellerData} />
+          </div>
+        )}
+
+        {(isFetchingBestComboSellerData || !!bestComboSellerData?.length) && (
+          <div className="py-5 md:py-12 lg:px-4">
+            <BestDealCombo bestComboSellerData={bestComboSellerData} isLoading={isFetchingBestComboSellerData} />
+          </div>
+        )}
 
         <div className="py-5 md:py-12 lg:px-4">
-          <BestDealCombo bestComboSellerData={bestComboSellerData} />
-        </div>
-
-        <div className="py-5 md:py-12 lg:px-4">
-          <LandList landData={landData} />
+          <LandList landData={landData} onChangeLand={onChangeLand} />
         </div>
       </FormProvider>
     </div>

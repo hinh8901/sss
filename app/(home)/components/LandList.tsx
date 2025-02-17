@@ -1,20 +1,18 @@
 "use client"
 
-import { useState } from "react"
 import clsx from "clsx"
 
 import LandItem from "@/app/components/LandItem"
 
 interface LandListProps {
   landData: Record<string, any>[] | null
+  onChangeLand: (land: string) => void
 }
 
 const LandList: React.FC<LandListProps> = (props) => {
-  const { landData } = props
+  const { landData, onChangeLand } = props
 
-  const [landList, setLandList] = useState(landData)
-
-  if (!landList) return null
+  if (!landData) return null
 
   return (
     <div>
@@ -26,13 +24,19 @@ const LandList: React.FC<LandListProps> = (props) => {
         "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6",
       )}>
         {
-          landList.map(land => (
+          landData.map(land => (
             <LandItem
               key={land.id}
               id={land.id}
               name={land.name}
               imgURL={land.bookingThumbnail}
               totalExplore={land.totalExplore}
+              onClick={() => {
+                window.scrollTo({ behavior: 'smooth', top: 0, left: 0 })
+                setTimeout(() => {
+                  onChangeLand(land.sitecode)
+                }, 250)
+              }}
             />
           ))
         }

@@ -26,7 +26,7 @@ const WhoComingSelect: React.FC<WhoComingPropsSelect> = (props) => {
       <PopoverTrigger asChild>
         <div
           className={clsx(
-            "bg-[#F8F8F8] rounded-lg",
+            "bg-[#F8F8F8] rounded-lg min-h-[60px]",
           )}
         >
           {label && (
@@ -35,7 +35,7 @@ const WhoComingSelect: React.FC<WhoComingPropsSelect> = (props) => {
             >{label}</div>
           )}
           <div
-            className="h-[34px] w-full px-3 font-medium text-base"
+            className="mb-[10px] w-full px-3 font-medium text-base line-clamp-1"
           >{displayText() || placeholder}</div>
         </div>
       </PopoverTrigger>
